@@ -14,8 +14,7 @@ width: ${props => props.width || "100%"};
 
 `;
 const IconButton = styled.button`   
-        border:2px solid blue;
-        box-border:none;
+        border:none;
         background-color: transparent;
 `;
 
