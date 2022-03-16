@@ -6,12 +6,16 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
+// import {GlobalStyles} from './styles/GlobalStyles'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    {/* <GlobalStyles> */}
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    {/* </GlobalStyles> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
