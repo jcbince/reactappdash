@@ -31,7 +31,7 @@ const LoginPage = (props) => {
 		signInWithEmailAndPassword(auth, email, password)
 	
 		
-		// navigation('dashboard');
+		navigation('dashboard');
 
 	}
   return (
