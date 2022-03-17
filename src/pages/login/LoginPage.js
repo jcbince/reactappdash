@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Link, useNavigate } from 'react-router-dom'
 import { AppBar } from '../../components/appbar';
@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 import { Label } from './../../ui/forms'
 import { Input } from './../../ui/forms'
-import { Button, SubmitButton } from '../../ui/buttons';
+import { SubmitButton } from '../../ui/buttons';
 
 
 const LoginPageStyles = styled.section ` 
@@ -35,11 +35,17 @@ const FormControl = styled.div`
 
 const LoginPage = (props) => {
 	let navigation =  useNavigate();
-
+	console.log('component rendered')
+	
+	const[email, setEmail] =  useState('');
+	const[password, setPassword] =  useState('');
 	//what reroutes you back to dashboard
 	function onHandleSubmit(e) {
 		e.preventDefault();
-		navigation('dashboard');
+		console.log(email)
+		console.log(password)
+		
+		// navigation('dashboard');
 
 	}
   return (
@@ -66,11 +72,11 @@ const LoginPage = (props) => {
 			<form onSubmit={onHandleSubmit}>
 				<FormControl >
 					<Label>Email</Label>
-					<Input type="email" placeholder="email" required />	
+					<Input type="email" placeholder="email" onChange={(e)=> setEmail(e.target.value)} required />	
 				</FormControl>
 				<FormControl>
 					<Label>Password</Label>
-					<Input type="email" placeholder="email" required />
+					<Input type="password" placeholder="email" onChange={(e)=> setPassword(e.target.value)} required />
 					
 				</FormControl>
 				<FormControl>
