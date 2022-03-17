@@ -1,35 +1,18 @@
 import React, { useState } from 'react'
+import { signInWithEmailAndPassword} from 'firebase/auth'
 
+// import { auth } from './../../libs/firebase'
 import { Link, useNavigate } from 'react-router-dom'
 import { AppBar } from '../../components/appbar';
 
+import {LoginPageStyles, FormControl} from './styles'
 
 import { Label } from './../../ui/forms'
 import { Input } from './../../ui/forms'
 import { SubmitButton } from '../../ui/buttons';
 
 
-const LoginPageStyles = styled.section ` 
 
-	max-width: 400px;
-	margin: 2rem auto;
-
-	h1 {
-		font-size: 2rem;
-	}
-
-	login-styles {
-
-	}
-
-
-
-`
-const FormControl = styled.div`
-		margin-bottom:1rem;
-		justify-content: center;
-
-`
 
 
 const LoginPage = (props) => {
