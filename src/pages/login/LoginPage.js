@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
-import { signInWithEmailAndPassword} from 'firebase/auth'
 
-// import {auth} from './../../libs/firebase'
 import { Link, useNavigate } from 'react-router-dom'
-import { AppBar } from '../../components/appbar';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from 'libs/firebase';
 
-import {LoginPageStyles, FormControl} from './styles'
+import { AppBar } from '../../components/appbar';
 
 import { Label } from './../../ui/forms'
 import { Input } from './../../ui/forms'
 import { SubmitButton } from '../../ui/buttons';
+
+
+import {LoginPageStyles, FormControl} from './styles'
+
+
 
 
 
@@ -24,6 +28,7 @@ const LoginPage = (props) => {
 	//what reroutes you back to dashboard
 	function onHandleSubmit(e) {
 		e.preventDefault();
+		signInWithEmailAndPassword(auth, email, password)
 	
 		
 		// navigation('dashboard');

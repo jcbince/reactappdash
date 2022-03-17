@@ -1,6 +1,6 @@
 import React from 'react'
 import {AppBarItem, AppBarItems, AppBarStyles} from './styles'
-import { IconButton, Button, SubmitButton } from '../../ui/buttons'
+import { IconButton } from '../../ui/buttons'
 import {IoNotificationsOutline} from 'react-icons/io5'
 
 
