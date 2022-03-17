@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { signInWithEmailAndPassword} from 'firebase/auth'
 
-// import { auth } from './../../libs/firebase'
+// import {auth} from './../../libs/firebase'
 import { Link, useNavigate } from 'react-router-dom'
 import { AppBar } from '../../components/appbar';
 
@@ -17,15 +17,14 @@ import { SubmitButton } from '../../ui/buttons';
 
 const LoginPage = (props) => {
 	let navigation =  useNavigate();
-	console.log('component rendered')
+	console.log('auth')
 	
 	const[email, setEmail] =  useState('');
 	const[password, setPassword] =  useState('');
 	//what reroutes you back to dashboard
 	function onHandleSubmit(e) {
 		e.preventDefault();
-		console.log(email)
-		console.log(password)
+	
 		
 		// navigation('dashboard');
 
