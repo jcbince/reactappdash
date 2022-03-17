@@ -1,6 +1,37 @@
 import React from 'react'
+
 import { Link, useNavigate } from 'react-router-dom'
 import { AppBar } from '../../components/appbar';
+
+import styled from 'styled-components';
+
+import { Label } from './../../ui/forms'
+import { Input } from './../../ui/forms'
+import { Button, SubmitButton } from '../../ui/buttons';
+
+
+const LoginPageStyles = styled.section ` 
+
+	max-width: 400px;
+	margin: 2rem auto;
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	login-styles {
+
+	}
+
+
+
+`
+const FormControl = styled.div`
+		margin-bottom:1rem;
+		justify-content: center;
+
+`
+
 
 const LoginPage = (props) => {
 	let navigation =  useNavigate();
@@ -24,10 +55,30 @@ const LoginPage = (props) => {
 
 		</ul>
 	</nav>
-	<form onSubmit={onHandleSubmit}>
-		<input type="email" required />
-		<button  type="submit">Click Me</button>
-	</form>
+	<LoginPageStyles>
+			<div class="login-styles">
+
+			</div>
+
+			<header>
+				<h1>Welcome to the Login Screen</h1>
+			</header>
+			<form onSubmit={onHandleSubmit}>
+				<FormControl >
+					<Label>Email</Label>
+					<Input type="email" placeholder="email" required />	
+				</FormControl>
+				<FormControl>
+					<Label>Password</Label>
+					<Input type="email" placeholder="email" required />
+					
+				</FormControl>
+				<FormControl>
+
+					<SubmitButton  color="pink" type="submit">Sign into the Dashboard </SubmitButton>
+				</FormControl>
+			</form>
+		</LoginPageStyles>	
 	</>
   )
 }
