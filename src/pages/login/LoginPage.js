@@ -19,7 +19,7 @@ const LoginPage = (props) => {
 	const[email, setEmail] =  useState('');
 	const[password, setPassword] =  useState('');
 
-	const notify = (error) => toast.error('Both your Login Credentials were wrong', {
+	const notify = (error) => toast.error('Login Credentials not authorized', {
 		position: "top-center",
 		autoClose: 5000,
 		hideProgressBar: false,
