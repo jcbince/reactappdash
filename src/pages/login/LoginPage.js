@@ -67,7 +67,7 @@ const LoginPage = (props) => {
 				</FormControl>
 				<FormControl>
 
-					<SubmitButton  color="pink" type="submit">Sign into the Dashboard </SubmitButton>
+					<SubmitButton  color="white" type="submit">Sign into the Dashboard </SubmitButton>
 				</FormControl>
 			</form>
 		</LoginPageStyles>	
