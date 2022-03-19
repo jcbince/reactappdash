@@ -1,37 +1,49 @@
 import React, { useState } from 'react'
 
 import { Link, useNavigate } from 'react-router-dom'
+
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from 'libs/firebase';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+import {LoginPageStyles, FormControl} from './styles'
 import { AppBar } from '../../components/appbar';
-
 import { Label } from './../../ui/forms'
 import { Input } from './../../ui/forms'
 import { SubmitButton } from '../../ui/buttons';
 
-
-import {LoginPageStyles, FormControl} from './styles'
-
-
-
-
-
-
-
 const LoginPage = (props) => {
 	let navigation =  useNavigate();
-	console.log('auth')
 	
 	const[email, setEmail] =  useState('');
 	const[password, setPassword] =  useState('');
+
+	const notify = (error) => toast.error('Both your Login Credentials were wrong', {
+		position: "top-center",
+		autoClose: 5000,
+		hideProgressBar: false,
+		closeOnClick: true,
+		pauseOnHover: true,
+		draggable: true,
+		progress: undefined,
+		});
+
 	//what reroutes you back to dashboard
 	function onHandleSubmit(e) {
 		e.preventDefault();
+
 		signInWithEmailAndPassword(auth, email, password)
+		.then(userCredential=>{
+			console.log('Credentials Successful')
+			navigation('dashboard');
+		})
+		.catch(error=>{
+			notify(error);
+		})
 	
 		
-		navigation('dashboard');
+		
 
 	}
   return (
@@ -48,6 +60,7 @@ const LoginPage = (props) => {
 		</ul>
 	</nav>
 	<LoginPageStyles>
+			<ToastContainer/>
 			<div class="login-styles">
 
 			</div>
