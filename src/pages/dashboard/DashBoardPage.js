@@ -1,27 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { auth,  } from 'libs/firebase';
+import {onAuthStateChanged} from 'firebase/auth'
 
 import { AppBar } from '../../components/appbar'
+import Sidebar from 'components/sidebar/Sidebar';
 
 
-const DashBoardPage = (props) => {
-  return (
-	<div>
-		<AppBar/>
-		<nav>
-			<ul>
-				<li><Link to="./dashboard">Dashboard</Link></li>
-				<li><Link to="./">Login</Link></li>
-				<li><Link to="./add">Add Products</Link></li>
-				<li><Link to="./update">Update Products</Link></li>
-				<li><Link to="./delete">Delete Products</Link></li>
 
-			</ul>
-		</nav>
-	  	
-	</div>
-  )
+function DashBoardPage  (props){
+		const [isUser, setIsUser] = useState(false)
+		const navigate = useNavigate();
+
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				setIsUser(true)
+
+			} else {
+				setIsUser(false);
+				navigate('/')
+			}
+
+		})
+		
+		if (isUser) {
+			return (
+
+				<>
+				<AppBar/>
+				<Sidebar/>
+	
+				</>
+			)
+		} else {
+			return null
+		}
+
+  
 }
 
 export default DashBoardPage

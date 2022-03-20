@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from 'libs/firebase';
@@ -12,6 +12,7 @@ import { AppBar } from '../../components/appbar';
 import { Label } from './../../ui/forms'
 import { Input } from './../../ui/forms'
 import { SubmitButton } from '../../ui/buttons';
+import Sidebar from 'components/sidebar/Sidebar';
 
 const LoginPage = (props) => {
 	let navigation =  useNavigate();
@@ -49,16 +50,6 @@ const LoginPage = (props) => {
   return (
 	<>
 	<AppBar/>
-	<nav>
-		<ul>
-			<li><Link to="./dashboard">Dashboard</Link></li>
-			<li><Link to="./">Login</Link></li>
-			<li><Link to="./add">Add Products</Link></li>
-			<li><Link to="./update">Update Products</Link></li>
-			<li><Link to="./delete">Delete Products</Link></li>
-
-		</ul>
-	</nav>
 	<LoginPageStyles>
 			<ToastContainer/>
 			<div class="login-styles">
@@ -75,7 +66,7 @@ const LoginPage = (props) => {
 				</FormControl>
 				<FormControl>
 					<Label>Password</Label>
-					<Input type="password" placeholder="email" onChange={(e)=> setPassword(e.target.value)} required />
+					<Input type="password" placeholder="password" onChange={(e)=> setPassword(e.target.value)} required />
 					
 				</FormControl>
 				<FormControl>
@@ -84,6 +75,8 @@ const LoginPage = (props) => {
 				</FormControl>
 			</form>
 		</LoginPageStyles>	
+	<Sidebar/>
+	
 	</>
   )
 }
