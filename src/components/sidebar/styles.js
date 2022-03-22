@@ -5,11 +5,16 @@ const SidebarStyles = styled.aside`
 	flex-direction:column;
 	box-shadow: 0 0 2px 1px grey;
 	width:289px;
-	height:auto;
-	box-shadow:2px 0 2px 0 grey;
+	position:absolute;
+	top:4rem;
+	left:0;
+	height:50rem;
 	padding:2rem:
+	margin:1rem;
 
 
 `;
+
+
 
 export { SidebarStyles }

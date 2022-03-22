@@ -5,7 +5,7 @@ import { auth } from 'libs/firebase'
 
 import { SidebarStyles } from './styles'
 
-import { Button } from 'ui/buttons'
+import { Button, SubmitButton } from 'ui/buttons'
 
 
 
@@ -30,9 +30,9 @@ const Sidebar = (props) => {
 			</nav>
 			</header>
 
-			<div className="content">
+			<SubmitButton>
 				<Button onClick={onLogoutRequest}>Logout</Button>
-			</div>
+			</SubmitButton>
 		</SidebarStyles>
   )
 }
