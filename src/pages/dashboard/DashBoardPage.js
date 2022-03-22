@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
-import { auth,  } from 'libs/firebase';
+import { auth  } from 'libs/firebase';
 import {onAuthStateChanged} from 'firebase/auth'
 
 import { DashBoardPageStyles } from './styles';
 import { AppBar } from '../../components/appbar'
 import Sidebar from 'components/sidebar/Sidebar';
+
 
 
 
@@ -20,7 +21,8 @@ function DashBoardPage  (props){
 
 			} else {
 				setIsUser(false);
-				navigate('/')
+				//wrong 
+				navigate('/');
 			}
 
 		})
@@ -32,6 +34,7 @@ function DashBoardPage  (props){
 				<AppBar/>
 				<DashBoardPageStyles>
 					<Sidebar/>
+
 				</DashBoardPageStyles>
 	
 				</>

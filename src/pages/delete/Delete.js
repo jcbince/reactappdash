@@ -1,17 +1,18 @@
 import Sidebar from 'components/sidebar/Sidebar'
 import React from 'react'
 
+
 import { AppBar } from '../../components/appbar'
 
 
-const PageNotFound = (props) => {
+const Delete = (props) => {
   return (
 	<div>
 		<AppBar/>
 		<Sidebar/>
-	  	<h1>404 - Lost</h1>
+	  <h1>Delete</h1>
 	</div>
   )
 }
 
-export default PageNotFound
+export default Delete
