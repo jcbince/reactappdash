@@ -10,8 +10,9 @@ box-shadow: 0 0 3px 1px rgb(220, 220, 220);
 padding: ${props => props.padding || "0.25rem 1.5rem"};;
 color: ${props => props.color || "grey"};
 font-size: ${props => props.fs || "1rem"};;
-width: ${props => props.width || "100%"};
-
+width: ${props => props.width || "90%"};
+margin-bottom: ${props => props.margin || "1rem"};
+0
 `;
 const IconButton = styled.button`   
         border:none;

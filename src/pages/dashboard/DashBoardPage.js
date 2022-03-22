@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { auth,  } from 'libs/firebase';
 import {onAuthStateChanged} from 'firebase/auth'
 
+import { DashBoardPageStyles } from './styles';
 import { AppBar } from '../../components/appbar'
 import Sidebar from 'components/sidebar/Sidebar';
 
@@ -29,7 +30,9 @@ function DashBoardPage  (props){
 
 				<>
 				<AppBar/>
-				<Sidebar/>
+				<DashBoardPageStyles>
+					<Sidebar/>
+				</DashBoardPageStyles>
 	
 				</>
 			)
