@@ -10,7 +10,7 @@ const Delete = (props) => {
 	<div>
 		<AppBar/>
 		<Sidebar/>
-	  <h1>Delete</h1>
+	  	<h1>Delete</h1>
 	</div>
   )
 }

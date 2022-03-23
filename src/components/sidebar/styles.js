@@ -1,22 +1,27 @@
+
 import styled from 'styled-components';
 
-const SidebarStyles = styled.aside`
-	display:flex;
-	color:grey;
-	flex-direction:column;
-	box-shadow: 0 0 2px 1px grey;
-	width:250px;
-	position:absolute;
-	top:4.1rem;
-	left:0;
-	padding:2rem:
-	margin:1rem;
-	align-items:center;
-
-	
-
+const SideBarStyles = styled.aside`
+   width:289px;
+   box-shadow: 2px 0 4px -2px grey;
+   padding:3rem;
+   background-color:#ffffff;
 `;
 
+const SideBarHeader = styled.header`
+ color:grey;
+ display:flex;
+ align-items: center ;
+ gap:0.25rem;
+h2{
+  font-size:18px;
+ 
+}
+   svg{
+     color:grey;
+     vertical-align:middle;
+  
+   }
+`;
 
-
-export { SidebarStyles }
+export {SideBarStyles, SideBarHeader}

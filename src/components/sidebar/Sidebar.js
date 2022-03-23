@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { signOut } from 'firebase/auth'
 import { auth } from 'libs/firebase'
 
-import { SidebarStyles } from './styles'
+import { SideBarStyles } from './styles'
 
 import { Button } from 'ui/buttons'
 
@@ -15,7 +15,7 @@ const Sidebar = (props) => {
 		signOut(auth)
 	}
   	return (
-		<SidebarStyles>
+		<SideBarStyles>
 			<header>
 				<h1>SideBar</h1>
 				<nav>
@@ -33,7 +33,7 @@ const Sidebar = (props) => {
 			
 			<Button onClick={onLogoutRequest}>Logout</Button>
 			
-		</SidebarStyles>
+		</SideBarStyles>
   )
 }
 

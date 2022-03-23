@@ -4,7 +4,8 @@ import styled from 'styled-components';
 const AppBarStyles = styled.nav`
 	display:flex;
 	justify-content:space-between;
-	box-shadow: 0 0 2px 1px grey;
+	box-shadow: -2px -1px 2px 1px grey;
+	background-color:white;
 	padding-right: 1rem;
 	height: 64px;
 	width:100%

@@ -10,9 +10,10 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path="/"  element={<LoginPage/>}/>
+           <Route path="/" index  element={<LoginPage/>}/>
            <Route path="dashboard"  element={<DashBoardPage/>} >
-                <Route index   element={<DashBoardPage title="All Products"/>}/>
+                {/* <Route index   element={<AllProductsPanel title="All Products"/>}/>
+                <Route path="add"   element={<AddProductPanel title="Add New Product "/>}/> */}
                 <Route path="add" element={<Add/>}/>
                 <Route path="update" element={<Update/>}/>
                 <Route path="delete" element={<Delete/>}/>
@@ -22,10 +23,8 @@ function App() {
           
  
            <Route path="*"  element={<PageNotFound/>}/>
+         </Routes>
       
-           
-    </Routes>
-
     </>
   );
 }
