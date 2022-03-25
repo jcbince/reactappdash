@@ -26,10 +26,7 @@ const AppBar = () => {
 			<AppBarItem>
 				<IconButton><FcSettings size="2rem"/></IconButton>
 			</AppBarItem>
-
-			
-			
-			
+	
 		</AppBarItems>
 	</AppBarStyles>
 

@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 import { signOut } from 'firebase/auth'
 import { auth } from 'libs/firebase'
 
-import { SideBarStyles } from './styles'
+
+import { SideBarStyles} from './styles'
 
 import { Button } from 'ui/buttons'
 
 
 
-const Sidebar = (props) => {
+const SideBar = (props) => {
 
 	function onLogoutRequest(e) {
 		signOut(auth)
@@ -19,6 +20,7 @@ const Sidebar = (props) => {
 			<header>
 				<h1>SideBar</h1>
 				<nav>
+				
 				<ul>
 					<li><Link to="./dashboard">Dashboard</Link></li>
 					<li><Link to="./">Login</Link></li>
@@ -37,4 +39,4 @@ const Sidebar = (props) => {
   )
 }
 
-export default Sidebar
+export default SideBar

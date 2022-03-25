@@ -51,7 +51,9 @@ const LoginPage = (props) => {
 	<>
 	<AppBar/>
 	
-	
+	<Sidebar>
+		
+	</Sidebar>
 	<LoginPageStyles>
 			<ToastContainer/>
 			<div class="login-styles">
@@ -77,7 +79,7 @@ const LoginPage = (props) => {
 				</FormControl>
 			</form>
 		</LoginPageStyles>	
-		<Sidebar/>
+		
 	
 	</>
   )

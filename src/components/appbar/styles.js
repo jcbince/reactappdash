@@ -7,6 +7,7 @@ const AppBarStyles = styled.nav`
 	box-shadow: -2px -1px 2px 1px grey;
 	background-color:white;
 	padding-right: 1rem;
+	padding:1rem;
 	height: 64px;
 	width:100%
 

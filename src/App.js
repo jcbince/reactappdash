@@ -1,9 +1,6 @@
-import Add from 'pages/add/Add';
-import Delete from 'pages/delete/Delete';
-import Update from 'pages/update/Update';
 import {Route, Routes } from 'react-router-dom'
  
-import { DashBoardPage, LoginPage, PageNotFound} from './pages'
+import { DashBoardPage, LoginPage, PageNotFound, Update, Add, Delete} from './pages'
 
 
 function App() {
