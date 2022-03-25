@@ -8,9 +8,7 @@ import { AppBar } from '../../components/appbar'
 const Delete = (props) => {
   return (
 	<div>
-		<AppBar/>
-		<Sidebar/>
-	  	<h1>Delete</h1>
+	  	<h1>Delete Here</h1>
 	</div>
   )
 }

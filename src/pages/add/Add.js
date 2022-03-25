@@ -7,9 +7,7 @@ import { AppBar } from '../../components/appbar'
 const Add = (props) => {
   return (
 	<div>
-		<AppBar/>
-		<Sidebar/>
-	  	<h1>404</h1>
+	  	<h1>ADD HERE</h1>
 	</div>
   )
 }

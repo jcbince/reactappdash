@@ -51,14 +51,12 @@ const LoginPage = (props) => {
 	<>
 	<AppBar/>
 	
-	<Sidebar>
+	<Sidebar/>
 		
-	</Sidebar>
+	
 	<LoginPageStyles>
 			<ToastContainer/>
-			<div class="login-styles">
-
-			</div>
+	
 
 			<header>
 				<h1>Welcome to the Login Screen</h1>

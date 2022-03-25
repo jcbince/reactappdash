@@ -22,10 +22,15 @@ const PageNotFound = (props) => {
 	<div>
 		<AppBar/>
 		<Sidebar/>
-	  	<h1>404 - Lost</h1>
-		  {
-			  isUser? <Link to='/dashboard'>Back To Safety</Link> :  <Link to='/'>Back To Safety</Link>
-		  }
+		<aside>
+			<header>
+				<h1>404 - Lost</h1>
+					{
+						isUser? <Link to='/dashboard'>Back To Safety</Link> :  <Link to='/'>Back To Safety</Link>
+					}
+				</header>
+		</aside>
+	  	
 	</div>
   )
 }
