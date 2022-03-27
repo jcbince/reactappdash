@@ -19,12 +19,12 @@ const SideBarListStyles = styled.a `
 const SideBarHeader = styled.header`
  color:grey;
  display:flex;
- align-items: center ;
- gap:0.25rem;
+ text-align:center;
   h2{
   font-size:18px;
  
   }
+
   svg{
      color:grey;
      vertical-align:middle;

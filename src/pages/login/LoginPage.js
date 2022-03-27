@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-
+import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from 'libs/firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,7 +13,9 @@ import { AppBar } from '../../components/appbar';
 import { Label } from './../../ui/forms'
 import { Input } from './../../ui/forms'
 import { SubmitButton } from '../../ui/buttons';
-import Sidebar from 'components/sidebar/Sidebar';
+
+import {DashBoardPageStyles} from "../dashboard/styles"
+import SideBar from 'components/sidebar/Sidebar'
 
 const LoginPage = (props) => {
 	let navigation =  useNavigate();
@@ -30,6 +33,17 @@ const LoginPage = (props) => {
 		progress: undefined,
 		});
 
+	const [isUser, setIsUser] = useState(false)
+	const navigator = useNavigate();
+	
+	onAuthStateChanged(auth, (user)=>{
+	   if(user){
+		   setIsUser(true)
+	   }else{
+			  setIsUser(false)
+			  navigator('/')
+		   }
+	})
 	//what reroutes you back to dashboard
 	function onHandleSubmit(e) {
 		e.preventDefault();
@@ -47,40 +61,45 @@ const LoginPage = (props) => {
 		
 
 	}
-  return (
-	<>
-	<AppBar/>
-	
-	<Sidebar/>
-		
-	
-	<LoginPageStyles>
-			<ToastContainer/>
-	
 
-			<header>
-				<h1>Welcome to the Login Screen</h1>
-			</header>
-			<form onSubmit={onHandleSubmit}>
-				<FormControl >
-					<Label>Email</Label>
-					<Input type="email" placeholder="email" onChange={(e)=> setEmail(e.target.value)} required />	
-				</FormControl>
-				<FormControl>
-					<Label>Password</Label>
-					<Input type="password" placeholder="password" onChange={(e)=> setPassword(e.target.value)} required />
-					
-				</FormControl>
-				<FormControl>
-
-					<SubmitButton  color="white" type="submit">Sign into the Dashboard </SubmitButton>
-				</FormControl>
-			</form>
-		</LoginPageStyles>	
+	if(isUser){
+		return (
+		  <>
+		  <AppBar/>
+		  <DashBoardPageStyles>
+		  <SideBar/>
+		  <Outlet/>
+		  </DashBoardPageStyles>
+		  	<LoginPageStyles>
+				<ToastContainer/>
 		
-	
-	</>
-  )
+
+				<header>
+					<h1>Welcome to the Login Screen</h1>
+				</header>
+				<form onSubmit={onHandleSubmit}>
+					<FormControl >
+						<Label>Email</Label>
+						<Input type="email" placeholder="email" onChange={(e)=> setEmail(e.target.value)} required />	
+					</FormControl>
+					<FormControl>
+						<Label>Password</Label>
+						<Input type="password" placeholder="password" onChange={(e)=> setPassword(e.target.value)} required />
+						
+					</FormControl>
+					<FormControl>
+
+						<SubmitButton  color="white" type="submit">Sign into the Dashboard </SubmitButton>
+					</FormControl>
+				</form>
+			</LoginPageStyles>
+		 </>
+		)
+	 }else{
+		 return null
+	 }
+  	
 }
 
 export default LoginPage
+

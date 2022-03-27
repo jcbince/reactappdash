@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 import { onAuthStateChanged } from 'firebase/auth'
 import {auth} from 'libs/firebase'
@@ -9,6 +9,7 @@ import {AppBar} from 'components/appbar'
 
 import {DashBoardPageStyles} from "./styles"
 import SideBar from 'components/sidebar/Sidebar'
+
 
 
 function DashBoardPage  (props){
@@ -30,9 +31,10 @@ function DashBoardPage  (props){
 		   <>
 		   <AppBar/>
 		   <DashBoardPageStyles>
-		   <SideBar/>
+			<SideBar/>
 			<Outlet/>
 		   </DashBoardPageStyles>
+	
 		  </>
 		 )
 	  }else{
