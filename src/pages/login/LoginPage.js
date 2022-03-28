@@ -67,32 +67,35 @@ const LoginPage = (props) => {
 		  <>
 		  <AppBar/>
 		  <DashBoardPageStyles>
+		  
 		  <SideBar/>
-		  <Outlet/>
+		  <LoginPageStyles>
+					<ToastContainer/>
+			
+
+					<header>
+						<h1>Welcome to the Login Screen</h1>
+					</header>
+					<form onSubmit={onHandleSubmit}>
+						<FormControl >
+							<Label>Email</Label>
+							<Input type="email" placeholder="email" onChange={(e)=> setEmail(e.target.value)} required />	
+						</FormControl>
+						<FormControl>
+							<Label>Password</Label>
+							<Input type="password" placeholder="password" onChange={(e)=> setPassword(e.target.value)} required />
+							
+						</FormControl>
+						<FormControl>
+
+							<SubmitButton  color="white" type="submit">Sign into the Dashboard </SubmitButton>
+						</FormControl>
+					</form>
+				</LoginPageStyles>
 		  </DashBoardPageStyles>
-		  	<LoginPageStyles>
-				<ToastContainer/>
-		
-
-				<header>
-					<h1>Welcome to the Login Screen</h1>
-				</header>
-				<form onSubmit={onHandleSubmit}>
-					<FormControl >
-						<Label>Email</Label>
-						<Input type="email" placeholder="email" onChange={(e)=> setEmail(e.target.value)} required />	
-					</FormControl>
-					<FormControl>
-						<Label>Password</Label>
-						<Input type="password" placeholder="password" onChange={(e)=> setPassword(e.target.value)} required />
-						
-					</FormControl>
-					<FormControl>
-
-						<SubmitButton  color="white" type="submit">Sign into the Dashboard </SubmitButton>
-					</FormControl>
-				</form>
-			</LoginPageStyles>
+			
+		  <Outlet/>
+		  	
 		 </>
 		)
 	 }else{
