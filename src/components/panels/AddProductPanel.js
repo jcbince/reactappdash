@@ -1,5 +1,7 @@
+import { ProductEditor } from 'components/products/ProductEditor'
 import React from 'react'
 import { PanelBody, PanelHeader, PanelStyles } from './styles'
+
 
 const AddProductPanel = ({title, ...props}) => {
 	return (
@@ -8,7 +10,7 @@ const AddProductPanel = ({title, ...props}) => {
 			  <h2>{title || " Add Display panel"}</h2>
 		  </PanelHeader>
 		  <PanelBody>
-  
+			<ProductEditor/>
 		  </PanelBody>
 	  </PanelStyles>
 	)

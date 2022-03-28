@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from 'libs/firebase'
 
-
 import { SideBarStyles} from './styles'
 
 import { Button } from 'ui/buttons'
