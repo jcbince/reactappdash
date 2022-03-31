@@ -1,8 +1,6 @@
 import React from 'react';
 
-
 import { ProductDataEntryForm } from '../ProductDataEntryForm';
-
 import { ProductEditorStyles } from './styles';
 import { ProductPreview } from '../ProductPreview';
 

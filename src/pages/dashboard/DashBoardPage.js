@@ -31,7 +31,7 @@ function DashBoardPage  (props){
 		   <>
 		   <AppBar/>
 		   <DashBoardPageStyles>
-			<SideBar/>
+		   <SideBar/>
 			<Outlet/>
 		   </DashBoardPageStyles>
 	

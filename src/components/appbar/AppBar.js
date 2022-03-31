@@ -1,6 +1,6 @@
 import React from 'react'
 import {AppBarItem, AppBarItems, AppBarStyles} from './styles'
-import { IconButton } from '../../ui/buttons'
+import { Button } from './../../ui/buttons'
 
 import {IoNotificationsOutline} from 'react-icons/io5'
 import {SiGravatar} from 'react-icons/si'
@@ -15,16 +15,16 @@ const AppBar = () => {
 		</AppBarItems>
 		<AppBarItems>
 			<AppBarItem>
-				<IconButton><IoNotificationsOutline size="2rem"/></IconButton>
+				<Button><IoNotificationsOutline size="2rem"/></Button>
 			</AppBarItem>
 			<AppBarItem>
-				<IconButton><AiTwotoneMail size="2rem"/></IconButton>
+				<Button><AiTwotoneMail size="2rem"/></Button>
 			</AppBarItem>
 			<AppBarItem>
-				<IconButton><SiGravatar size="2rem"/></IconButton>
+				<Button><SiGravatar size="2rem"/></Button>
 			</AppBarItem>
 			<AppBarItem>
-				<IconButton><FcSettings size="2rem"/></IconButton>
+				<Button><FcSettings size="2rem"/></Button>
 			</AppBarItem>
 	
 		</AppBarItems>

@@ -1,5 +1,6 @@
-import { ProductEditor } from 'components/products/ProductEditor'
 import React from 'react'
+
+import { ProductEditor } from 'components/products/ProductEditor'
 import { PanelBody, PanelHeader, PanelStyles } from './styles'
 
 
