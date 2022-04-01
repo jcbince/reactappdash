@@ -1,12 +1,19 @@
 import React from 'react';
 
-import {ProductPreviewStyles} from './styles'
+
+import {ProductPreviewStyles, ProductImage, ProductName, ProductPrice, ProductDescription} from './styles'
+import PlaceholderImage from 'assets/images/8k2.jpg'
 
 function ProductPreview ({children, ...props})  {
   return (
         <ProductPreviewStyles  {...props}>
-           <h2>ProductPreview Component</h2>
-           {children}
+          <ProductName>Name</ProductName>
+          <ProductImage>
+            <img src={PlaceholderImage} alt='8ka2'/>
+          </ProductImage>
+          <ProductPrice>Price</ProductPrice>
+          <ProductDescription>Description</ProductDescription>
+
 
         </ProductPreviewStyles>
   )
