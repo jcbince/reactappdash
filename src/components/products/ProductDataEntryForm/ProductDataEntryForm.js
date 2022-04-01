@@ -2,6 +2,8 @@ import React from 'react';
 
 import {ProductDataEntryFormStyles, ProductImage, ProductName, ProductPrice, ProductDescription} from './styles'
 import {Label, Input} from 'ui/forms'
+import { ProductImageDropBox } from '../ProductImageDropBox';
+import { TextArea } from 'ui/forms/textarea';
 
 
 function ProductDataEntryForm ({children, ...props})  {
@@ -9,20 +11,24 @@ function ProductDataEntryForm ({children, ...props})  {
         <ProductDataEntryFormStyles  {...props}>
             <ProductImage>
               <Label>Product Image</Label>
-              <Input/>
+              <Input/>  
+              <ProductImageDropBox/>
             </ProductImage>
+            <fieldset>
+              <ProductName>
+                <Label>Product Name</Label>
+              </ProductName>
 
-            <ProductName>
-              <Label>Product Name</Label>
-            </ProductName>
+              <ProductPrice>
+              <Label>Product Price</Label>
+              <Input/>  
+              </ProductPrice>
 
-            <ProductPrice>
-            <Label>Product Price</Label>  
-            </ProductPrice>
+            </fieldset>
 
             <ProductDescription>
             <Label>Product Description</Label>  
-
+            <TextArea rows={6}/>
             </ProductDescription>  
         </ProductDataEntryFormStyles>
   )
