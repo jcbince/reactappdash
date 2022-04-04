@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Sidebar from 'components/sidebar/Sidebar'
-import { AppBar } from '../../components/appbar'
+
 
 
 const Add = (props) => {

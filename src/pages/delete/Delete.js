@@ -1,8 +1,4 @@
-import Sidebar from 'components/sidebar/Sidebar'
 import React from 'react'
-
-
-import { AppBar } from '../../components/appbar'
 
 
 const Delete = (props) => {
