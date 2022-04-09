@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Outlet } from 'react-router-dom'
+
 
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { onAuthStateChanged } from 'firebase/auth'
@@ -9,13 +9,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import {LoginPageStyles, FormControl} from './styles'
-import { AppBar } from '../../components/appbar';
+
 import { Label } from './../../ui/forms'
 import { Input } from './../../ui/forms'
 import { SubmitButton } from '../../ui/buttons';
 
-import {DashBoardPageStyles} from "../dashboard/styles"
-import SideBar from 'components/sidebar/Sidebar'
+ 
 
 const LoginPage = (props) => {
 	let navigation =  useNavigate();
@@ -33,7 +32,7 @@ const LoginPage = (props) => {
 		progress: undefined,
 		});
 
-	const [isUser, setIsUser] = useState(false)
+	const [ setIsUser] = useState(false)
 	const navigator = useNavigate();
 	
 	onAuthStateChanged(auth, (user)=>{
@@ -62,13 +61,9 @@ const LoginPage = (props) => {
 
 	}
 
-	if(isUser){
-		return (
-		  <>
-		  <AppBar/>
-		  <DashBoardPageStyles>
-		  
-		  <SideBar/>
+ 
+	return (
+		  <>	 
 		  <LoginPageStyles>
 					<ToastContainer/>
 			
@@ -92,15 +87,9 @@ const LoginPage = (props) => {
 						</FormControl>
 					</form>
 				</LoginPageStyles>
-		  </DashBoardPageStyles>
-			
-		  <Outlet/>
-		  	
 		 </>
 		)
-	 }else{
-		 return null
-	 }
+	 
   	
 }
 
