@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 const ProductPreviewStyles  = styled.aside`
-      max-width:35px;
+      max-width:350px;
       align-self:stretch;
-      padding:3rem 2rem;;
-      
+      padding:3rem 2rem;
+      background-color: #f8fafc;
 `;
 
 const ProductImage = styled.div`
@@ -13,6 +13,7 @@ const ProductImage = styled.div`
     width:300px;
     img{
         width:100%;
+        height:auto;
     }
 `;
 
@@ -27,15 +28,15 @@ const ProductName = styled.h2`
 
 const ProductPrice = styled.p`
     font-size:2rem;
-    font-weight:700;
-    letter-spacing:-0.5rem;
+    font-weight:100;
+    letter-spacing:-1px;
     color:#64748b;
     margin-top:-0.3rem;
     margin-bottom:0.25rem;
 `;
 
 const ProductDescription = styled.p`
-    font-sizeP:13px;
+    font-size:13px;
     color:#94a3b8;
 `
 

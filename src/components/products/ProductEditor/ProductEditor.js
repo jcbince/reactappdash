@@ -5,11 +5,13 @@ import { ProductEditorStyles } from './styles';
 import { ProductPreview } from '../ProductPreview';
 
 
-function ProductEditor ({children, ...props})  {
+function ProductEditor ({children, productName, handleProductName, ...props})  {
+ 
+
   return (
         <ProductEditorStyles  {...props}>
-           <ProductDataEntryForm/>
-           <ProductPreview/>
+           <ProductDataEntryForm handleProductName={handleProductName}/>
+           <ProductPreview productName={productName}/>
 
         </ProductEditorStyles>
   )

@@ -12,6 +12,7 @@ const ProductOptionStyles = styled.ul`
 	li{
 		padding:1rem;
 	}
+	
 	a{
 		font-size:14px;
 		text-decoration:none;

@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { ProductEditor } from 'components/products/ProductEditor'
+
 import { PanelBody, PanelHeader, PanelStyles } from './styles'
+import { AddProduct } from 'components/products/widgets/AddProduct'
 
 
 const AddProductPanel = ({title, ...props}) => {
@@ -11,7 +12,7 @@ const AddProductPanel = ({title, ...props}) => {
 			  <h2>{title || " Add Display panel"}</h2>
 		  </PanelHeader>
 		  <PanelBody>
-			<ProductEditor/>
+			<AddProduct/>
 		  </PanelBody>
 	  </PanelStyles>
 	)
@@ -19,19 +20,3 @@ const AddProductPanel = ({title, ...props}) => {
   
   export default AddProductPanel
 
-
-//when errors arise
-// function AllProductsPanel({title, ...props}) {
-// 	return (
-// 		<PanelStyles>
-// 			<PanelHeader>
-// 				<h2>{title || "Display panel"}</h2>
-// 			</PanelHeader>
-// 			<PanelBody>
-
-// 			</PanelBody>
-// 		</PanelStyles>
-// 	)
-// }
-
-// export default AllProductsPanel

@@ -6,7 +6,7 @@ const ProductDataEntryFormStyles  = styled.form`
       /* styles */
       width:380px;
       input:focus, textare:focus {
-            border-color:corrrnflowerblue;
+            border-color: cornflowerblue;
             background-color:#eff6ff;
             outline-color: cornflowerblue;
       }
@@ -26,12 +26,12 @@ const ProductImage  = styled.div`
 
 const ProductName  = styled.div`
       /* styles */
-      flex:3.5;
+      flex:3
     
 `;
 const ProductPrice  = styled.div`
       /* styles */
-      flex:3.5;
+      flex:1;
     
 `;
 const ProductDescription  = styled.div`
