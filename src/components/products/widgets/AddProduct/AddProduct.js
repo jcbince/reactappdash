@@ -6,14 +6,26 @@ import { ProductEditor } from 'components/products/ProductEditor';
 
 function AddProduct ({children, ...props})  {
   const [productName, setProductName] = useState('Product Name')
-    function handleProductName(name){
-      setProductName(name);
+  const [productPrice, setProductPrice] = useState('236.96')
 
+    function handleProductName(name){
+      setProductName(name)
+      
     }
-  
+    
+    function handleProductPrice(price){
+      setProductPrice(price)
+    
+    }
+    
+
   return (
         <AddProductStyles  {...props}>
-          <ProductEditor productName={productName} handleProductName={handleProductName}/>
+          <ProductEditor 
+            productName={productName}
+            productPrice={productPrice}  
+            handleProductName={handleProductName}
+            handleProductPrice={handleProductPrice}/>
         </AddProductStyles>
   )
 }
