@@ -26,7 +26,6 @@ const ProductOptionStyles = styled.ul`
 function ProductOptions() {
   return (
 		<ProductOptionStyles>
-			<li><Link to="./">Login</Link></li>
 			<li><Link to="/dashboard">View All Products</Link></li>
 			<li><Link to="add">Add Products</Link></li>
 			<li><Link to="update">Update Products</Link></li>
