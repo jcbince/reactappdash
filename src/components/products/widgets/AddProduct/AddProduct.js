@@ -1,12 +1,13 @@
 
 import React, { useState } from 'react';
-
+import { useNumberFormat } from 'hooks/useNumberFormat';
 import {AddProductStyles} from './styles'
 import { ProductEditor } from 'components/products/ProductEditor';
 
 function AddProduct ({children, ...props})  {
   const [productName, setProductName] = useState('Product Name')
   const [productPrice, setProductPrice] = useState('236.96')
+  const formatter = useNumberFormat();
 
     function handleProductName(name){
       setProductName(name)
@@ -14,7 +15,7 @@ function AddProduct ({children, ...props})  {
     }
     
     function handleProductPrice(price){
-      setProductPrice(price)
+      setProductPrice(formatter(price))
     
     }
     
