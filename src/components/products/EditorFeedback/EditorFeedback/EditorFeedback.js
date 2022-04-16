@@ -1,11 +1,17 @@
 import React from 'react';
 import { Button } from 'ui/buttons';
 import{AiOutlineCheckCircle , AiOutlineCloudUpload} from 'react-icons/ai'
-
+import { useNavigate } from 'react-router';
 import {EditorFeedbackStyles, Feedback, FeedbackMessage, FeedbackOption} from './styles'
 
+
+
 function EditorFeedback ({children, status, writeCompleted, ...props})  {
+  
+  const navigator = useNavigate();
+  
   return (
+        
         <EditorFeedbackStyles  {...props}>
            {
              !status 
