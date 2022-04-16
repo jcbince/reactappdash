@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNumberFormat } from 'hooks/useNumberFormat';
 import {AddProductStyles} from './styles'
 import { ProductEditor } from 'components/products/ProductEditor';
-
+import { useAddNewProduct } from 'hooks/useAddNewProduct';
 import ProductPreviewImage from 'assets/images/8k2.jpg'
 
 function AddProduct ({children, ...props})  {
@@ -12,6 +12,8 @@ function AddProduct ({children, ...props})  {
   const [productPrice, setProductPrice] = useState('666.333')
   const [productImage, setProductImage] = useState(ProductPreviewImage)
   const [productDescription, setProductDescription] = useState('Velocita is designed for players who need multi-directional agility and speed. From hard stops to split-second turns and directional changes. In simple terms – the faster you move, the more you are a blur to your opponent. The faster you move, the more time you have and the less time your opponents have to stop you. The faster you move, the quicker the ball is in the back of the net.')
+
+  const [loading, productLoader] = useAddNewProduct();
   
   const formatter = useNumberFormat();
 
@@ -38,6 +40,7 @@ function AddProduct ({children, ...props})  {
         productDescription
       }
       setIsWriting(true);
+      productLoader(productData, productImage)
     }
 
     if(isWriting){
