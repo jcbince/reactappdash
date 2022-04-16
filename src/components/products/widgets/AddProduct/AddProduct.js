@@ -10,7 +10,7 @@ function AddProduct ({children, ...props})  {
   const [isWriting, setIsWriting] = useState(false)
   const [productName, setProductName] = useState('JS Kicks JC in the Teeth')
   const [productPrice, setProductPrice] = useState('666.333')
-  const [productImage, setProductImage] = useState(ProductPreviewImage)
+  const [productImage, setProductImage] = useState({previewImage:ProductPreviewImage , file:null})
   const [productDescription, setProductDescription] = useState('Velocita is designed for players who need multi-directional agility and speed. From hard stops to split-second turns and directional changes. In simple terms – the faster you move, the more you are a blur to your opponent. The faster you move, the more time you have and the less time your opponents have to stop you. The faster you move, the quicker the ball is in the back of the net.')
 
   const [loading, productLoader] = useAddNewProduct();
@@ -40,7 +40,7 @@ function AddProduct ({children, ...props})  {
         productDescription
       }
       setIsWriting(true);
-      productLoader(productData, productImage)
+      productLoader(productData, productImage.file)
     }
 
     if(isWriting){

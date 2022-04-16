@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { ref, push, set } from 'firebase/database'
-import {db} from 'libs/firebase'
+import { ref, push, set, get } from 'firebase/database'
 
+import {ref as storageRef,uploadBytes, getDownloadURL, getStorage } from 'firebase/storage'
+import {db} from 'libs/firebase'
 
 
 function useAddNewProduct(){
@@ -11,8 +12,24 @@ function useAddNewProduct(){
 		setLoading(true);
 		const newRef= await push(ref(db,'products'))
 		
-		
+
+		const imageRef = await storageRef(getStorage `images/products/${imageFile.name}`)
+		const uploadRef = await  uploadBytes(imageRef, imageFile)
+		const imageUrl = await getDownloadURL(imageRef)
 		set(newRef,{...productData})
+
+		let results = Promise.all([newRef ,imageRef, uploadRef, imageUrl])
+
+		results.then(()=>{
+			set(newRef, {
+				...productData, 
+				imageUrl,
+				imageStoragePath:uploadRef.metadata.fullPath,
+				uid:newRef.key })
+		})
+		.then(()=>{
+			setLoading(false)
+		})
 	}
 	return [loading, productLoader]
 }
