@@ -5,6 +5,8 @@ import {AddProductStyles} from './styles'
 import { ProductEditor } from 'components/products/ProductEditor';
 import { useAddNewProduct } from 'hooks/useAddNewProduct';
 import ProductPreviewImage from 'assets/images/8k2.jpg'
+import { EditorFeedback } from 'components/products/EditorFeedback/EditorFeedback';
+
 
 function AddProduct ({children, ...props})  {
   const [isWriting, setIsWriting] = useState(false)
@@ -44,7 +46,7 @@ function AddProduct ({children, ...props})  {
     }
 
     if(isWriting){
-      return <h1>Editor Feddback Component</h1>
+      return <EditorFeedback status={loading}/>
     }else {
       return (
         <AddProductStyles  {...props}>

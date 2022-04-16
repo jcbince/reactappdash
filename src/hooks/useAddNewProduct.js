@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import { ref, push, set, get } from 'firebase/database'
+import {useState} from 'react';
+import { ref, push, set } from 'firebase/database'
 
 import {ref as storageRef,uploadBytes, getDownloadURL, getStorage } from 'firebase/storage'
-import {db} from 'libs/firebase'
+import {db} from 'libs/firebase'//storage wont work for some reason like in the video
 
 
 function useAddNewProduct(){
