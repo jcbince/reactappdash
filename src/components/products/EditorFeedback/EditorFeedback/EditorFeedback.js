@@ -4,7 +4,7 @@ import{AiOutlineCheckCircle , AiOutlineCloudUpload} from 'react-icons/ai'
 
 import {EditorFeedbackStyles, Feedback, FeedbackMessage, FeedbackOption} from './styles'
 
-function EditorFeedback ({children, status, ...props})  {
+function EditorFeedback ({children, status, writeCompleted, ...props})  {
   return (
         <EditorFeedbackStyles  {...props}>
            {
@@ -13,21 +13,29 @@ function EditorFeedback ({children, status, ...props})  {
              <Feedback>
               <AiOutlineCheckCircle color="d9f99d" size="12rem" />
               <FeedbackMessage>
-                Product Upload Successfully
+                Product Uploaded Successfully
               </FeedbackMessage>
             </Feedback>
             :
             <Feedback>
-             <AiOutlineCloudUpload color="d9f99d" />
+             <AiOutlineCloudUpload color="d9f99d" size="12rem" />
              <FeedbackMessage>
-               Product Upload Successfully
+              Uploading New Product
              </FeedbackMessage>
            </Feedback>
 
            }
            <FeedbackOption>
-             <Button bc="tomato" color='d9f99d'>Another Product</Button>
-             <Button bc="cornflowerblue" color='white'>View All Products</Button>
+             <Button 
+              bc="tomato" 
+              color="d9f99d"
+              onClick={()=>writeCompleted(false)}
+              disabled={status}
+              >Another Product</Button>
+             <Button 
+              bc="cornflowerblue" 
+              color='white'
+              onClick={()=>navigator('/dashboard')}>View All Products</Button>
            </FeedbackOption>
         </EditorFeedbackStyles>
   )
