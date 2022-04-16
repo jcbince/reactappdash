@@ -5,6 +5,7 @@ import {AddProductStyles} from './styles'
 import { ProductEditor } from 'components/products/ProductEditor';
 
 function AddProduct ({children, ...props})  {
+  const [isWriting, setIsWriting] = useState(false)
   const [productName, setProductName] = useState('Product Name')
   const [productPrice, setProductPrice] = useState('236.96')
   const [productImage, setProductImage] = useState('ProductPreview')
@@ -27,8 +28,20 @@ function AddProduct ({children, ...props})  {
     
     }
     
+    function handleSubmit(e) {
+      e.preventDefault();
+      const productData = {
+        productName,
+        productPrice,
+        productDescription
+      }
+      setIsWriting(true);
+    }
 
-  return (
+    if(isWriting){
+      return <h1>Editor Feddback Component</h1>
+    }else {
+      return (
         <AddProductStyles  {...props}>
           <ProductEditor 
             productName={productName}
@@ -38,9 +51,12 @@ function AddProduct ({children, ...props})  {
             handleProductName={handleProductName}
             handleProductPrice={handleProductPrice}
             setProductImage={setProductImage}
-            handleProductDescription={handleProductDescription} />
+            handleProductDescription={handleProductDescription} 
+            handleSubmit={handleSubmit} />
         </AddProductStyles>
   )
+    }
+  
 }
 
 export default AddProduct

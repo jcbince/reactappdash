@@ -5,7 +5,7 @@ import { ProductEditorStyles } from './styles';
 import { ProductPreview } from '../ProductPreview';
 
 
-function ProductEditor ({children, productName, productPrice, productImage, productDescription, handleProductName, handleProductPrice, handleProductDescription, setProductImage, ...props})  {
+function ProductEditor ({children, productName, productPrice, productImage, productDescription, handleSubmit, handleProductName, handleProductPrice, handleProductDescription, setProductImage, ...props})  {
  
 
   return (
@@ -14,6 +14,7 @@ function ProductEditor ({children, productName, productPrice, productImage, prod
               handleProductName={handleProductName}
               handleProductPrice={handleProductPrice}
               handleProductDescription={handleProductDescription}
+              handleSubmit={handleSubmit}
               setProductImage={setProductImage}/>
            <ProductPreview
             productName={productName}
@@ -23,6 +24,7 @@ function ProductEditor ({children, productName, productPrice, productImage, prod
                />
 
         </ProductEditorStyles>
+
   )
 }
 
