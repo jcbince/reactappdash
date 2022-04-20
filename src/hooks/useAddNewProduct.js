@@ -11,6 +11,7 @@ function useAddNewProduct(){
 	const productLoader = async function(productData, imageFile){
 		setLoading(true);
 		const newRef= await push(ref(db,'products'))
+		console.log(newRef.key)
 		
 
 		const imageRef = await storageRef(`images/products/${imageFile.name}`)
