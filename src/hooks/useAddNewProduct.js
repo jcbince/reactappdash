@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { ref, push, set } from 'firebase/database'
 
-import {ref as storageRef,uploadBytes, getDownloadURL, getStorage } from 'firebase/storage'
+import {ref as storageRef,uploadBytes, getDownloadURL } from 'firebase/storage'
 import {db} from 'libs/firebase'//storage wont work for some reason like in the video
 
 
@@ -13,7 +13,7 @@ function useAddNewProduct(){
 		const newRef= await push(ref(db,'products'))
 		
 
-		const imageRef = await storageRef(getStorage, `images/products/${imageFile.name}`)
+		const imageRef = await storageRef(`images/products/${imageFile.name}`)
 		const uploadRef = await  uploadBytes(imageRef, imageFile)
 		const imageUrl = await getDownloadURL(imageRef)
 		set(newRef,{...productData})

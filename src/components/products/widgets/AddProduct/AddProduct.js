@@ -5,7 +5,7 @@ import {AddProductStyles} from './styles'
 import { ProductEditor } from 'components/products/ProductEditor';
 import { useAddNewProduct } from 'hooks/useAddNewProduct';
 import ProductPreviewImage from 'assets/images/8k2.jpg'
-import { EditorFeedback } from 'components/products/EditorFeedback/EditorFeedback';
+import { EditorFeedback } from 'components/products/EditorFeedback';
 
 const defaults = {
   description:`Velocita is designed for players who need multi-directional agility and speed. From hard stops to split-second turns and directional changes. In simple terms  the faster you move, the more you are a blur to your opponent. The faster you move, the more time you have and the less time your opponents have to stop you. The faster you move, the quicker the ball is in the back of the net.`,

@@ -14,8 +14,9 @@ function ProductEditor ({children, productName, productPrice, productImage, prod
               handleProductName={handleProductName}
               handleProductPrice={handleProductPrice}
               handleProductDescription={handleProductDescription}
+              setProductImage={setProductImage}
               handleSubmit={handleSubmit}
-              setProductImage={setProductImage}/>
+             />
            <ProductPreview
             productName={productName}
             productPrice={productPrice}
